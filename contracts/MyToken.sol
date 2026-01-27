@@ -3,6 +3,10 @@ pragma solidity ^0.8.20;
 
 /**
  * @title 我的代币
+ * @notice 我们自己的代币合约在进行转账时，区别于sepolia直接转账：
+ * @notice 1、转账时，不转ETH代币（即此处显示ETH为0）、转的是我们自己的代币数量
+ * @notice 2、但转账时，实际的gas费用，仅能通过ETH结算
+ * @notice 3、我的代币合约的交易（此时to显示合约地址）、区别于ETH直接的转账交易（此时to显示账户地址）
  */
 contract MyToken {
 
