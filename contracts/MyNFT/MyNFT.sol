@@ -5,6 +5,10 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+/**
+ * @title 我的NFT
+ * @notice 合约地址：0x8d5d463beEA0646f9c264FD641e9f9cF53fA3Ef4
+ */
 contract MyNFT is ERC721, ERC721URIStorage, Ownable {
 
     // Token ID计数器
