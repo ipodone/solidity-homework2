@@ -145,4 +145,6 @@ contract MyToken {
     }
     // 测试过程：
     // 1、部署 2、按函数测试
+    // 3、算了：sepolia上查看合约源码，可能是通过Remix部署完成后的日志地址点进去下面地址的（而非sepolia区块链浏览器）：
+    // https://eth-sepolia.blockscout.com/address/0x8013a7Cb9e6decdACDf71Be078B6cd42363E3193?tab=contract - 使用过成功：ETH用的Wei单位
 }
