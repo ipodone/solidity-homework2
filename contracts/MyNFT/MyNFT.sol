@@ -8,6 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /**
  * @title 我的NFT
  * @notice 合约地址：0x8d5d463beEA0646f9c264FD641e9f9cF53fA3Ef4
+ * @notice ！！！此合约不可用，因为没有提取功能，会导致ETH锁在合约地址里 - 此处注释掉铸造功能，待不起提取功能后，放开
  */
 contract MyNFT is ERC721, ERC721URIStorage, Ownable {
 
@@ -38,28 +39,28 @@ contract MyNFT is ERC721, ERC721URIStorage, Ownable {
      */
     constructor() ERC721("MyNFT", "MNFT") Ownable(msg.sender) {}
 
-    function mint(string memory uri) public payable returns (uint256) {
-        // 检查供应量限制
-        require(_tokenIdCounter < MAX_SUPPLY, "Max supply reached");
+    // function mint(string memory uri) public payable returns (uint256) {
+    //     // 检查供应量限制
+    //     require(_tokenIdCounter < MAX_SUPPLY, "Max supply reached");
 
-        // 检查支付金额
-        require(msg.value >= mintPrice, "Insufficient payment");
+    //     // 检查支付金额
+    //     require(msg.value >= mintPrice, "Insufficient payment");
 
-        // 递增计数器
-        _tokenIdCounter++;
-        uint256 newTokenId = _tokenIdCounter;
+    //     // 递增计数器
+    //     _tokenIdCounter++;
+    //     uint256 newTokenId = _tokenIdCounter;
 
-        // 安全铸造NFT
-        _safeMint(msg.sender, newTokenId);
+    //     // 安全铸造NFT
+    //     _safeMint(msg.sender, newTokenId);
 
-        // 设置元数据URI
-        _setTokenURI(newTokenId, uri);
+    //     // 设置元数据URI
+    //     _setTokenURI(newTokenId, uri);
 
-        // 触发事件
-        emit NFTMinted(msg.sender, newTokenId, uri);
+    //     // 触发事件
+    //     emit NFTMinted(msg.sender, newTokenId, uri);
 
-        return newTokenId;
-    }
+    //     return newTokenId;
+    // }
 
     /**
      * @dev 重写tokenURI函数
